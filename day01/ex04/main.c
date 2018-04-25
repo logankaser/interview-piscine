@@ -11,6 +11,7 @@ int main(void)
 	/*-------------------
 	launch your test here
 	--------------------*/
+	test();
 
 	return (0);
 }

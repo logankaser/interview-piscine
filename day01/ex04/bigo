@@ -1,0 +1,6 @@
+queue:
+	push O(1)
+	pop O(1)
+	peek O(1)
+	isempty O(1)
+space O(n) on messages queued

@@ -6,7 +6,7 @@
 /*   By: lkaser <lkaser@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 12:42:49 by lkaser            #+#    #+#             */
-/*   Updated: 2018/04/24 22:13:45 by lkaser           ###   ########.fr       */
+/*   Updated: 2018/04/24 23:10:57 by lkaser           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int stringAppend(struct s_string* s, char *add)
 {
 	int len = strlen(add);
 
+	if (len < 1)
+		return 0;
 	if (len > s->capacity - s->length)
 	{
 		s->capacity = (s->length + len) * 2;
@@ -67,6 +69,7 @@ char* decompress(char* comp)
 		if (*comp == ',')
 			++comp;
 	}
+	++comp;
 
 	// Decompress
 
