@@ -36,10 +36,10 @@ int tankPop(struct s_tank *tank);
   ?? test function used in main
   --------------------------------*/
 
+void test(void);
 
 /*--------------------------------
   &  your own other function
   --------------------------------*/
-
 
 #endif

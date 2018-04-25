@@ -1,0 +1,4 @@
+Tank Stack
+	push: time O(1), O(n) on number of stacks on re allocate
+	pop: time O(1)
+	space is O(n) on number of pushed elements / number of tanks

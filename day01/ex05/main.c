@@ -7,13 +7,10 @@
 
 int main(void)
 {
-	struct s_tank *tank = initTank();
-
 	/*-------------------
 	launch your test here
 	--------------------*/
-	tankPush(tank, 10);
-	tankPush(tank, 50);
+	test();
 	return (0);
 }
 
