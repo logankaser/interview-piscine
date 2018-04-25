@@ -21,6 +21,9 @@ void  sortArts(struct s_art **arts);
   ?? test function used in main 
   --------------------------------*/
 
+void	test(struct s_art **arts);
+
+
 struct s_art **getArts(void);
 
 

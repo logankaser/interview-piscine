@@ -36,6 +36,7 @@ char *compress(char *book, struct s_dict *dict);
 /*--------------------------------
   ?? test function used in main 
   --------------------------------*/
+void	test(char* book, struct s_dict* dict);
 
 char *readBookFile(void);
 void readWordsFile(char ***pWords, int *pLenWords);

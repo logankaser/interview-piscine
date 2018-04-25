@@ -1,0 +1,17 @@
+hash:
+	time O(n) on key size
+	space O(1)
+
+init:
+	time O(1)
+	space O(n) on capacity
+
+insert:
+	time O(n) on number of elements in the bucket
+	average time O(1), worst case is O(log n) if buckets are implemented with a binary tree
+	space O(1)
+
+search:
+	time O(n) on number of elements per bucket
+	average time O(1), worst case is O(log n) if buckets are implemented with a binary tree
+	space O(1)

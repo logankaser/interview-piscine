@@ -1,0 +1,2 @@
+O(log n) time on the number of elements to search
+O(1) space

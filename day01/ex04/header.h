@@ -4,26 +4,40 @@
 /*--------------------------------
   !! required structure
   --------------------------------*/
-# define DEPTH 3
-
 
 /*--------------------------------
   :) function you must implement
   --------------------------------*/
 
-# define ALPHAS "abcdefghijklmnopqrstuvwxyz"
+/*
+	Queue
+*/
 
-char    *delete(char *word, int pos);
-char    *replace(char *word, int pos, char c);
-char    *add(char *word, int pos, char c);
+struct s_node {
+	char          *message;
+	struct s_node *next;
+};
 
-char	*whatWasThat(char *word, char **dict);
+struct s_queue {
+  struct s_node *first;
+	struct s_node *last;
+};
+
+
+struct s_queue *queueInit(void);
+
+char *dequeue(struct s_queue *queue);
+
+void enqueue(struct s_queue *queue, char *message);
+
+char *peek(struct s_queue *queue);
+
+int isEmpty(struct s_queue *queue);
 
 
 /*--------------------------------
-  ?? test function used in main
+  ?? test function used in main 
   --------------------------------*/
-
 
 /*--------------------------------
   &  your own other function

@@ -10,11 +10,7 @@ int main(void)
 	struct s_art **arts;
 
 	arts = getArts(); //parsing the file and put it in an array
-
-	/*-------------------
-	launch your test here
-	--------------------*/
-
+	test(arts);
 	return (0);
 }
 

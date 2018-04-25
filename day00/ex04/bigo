@@ -1,0 +1,3 @@
+rabinkarp:
+	time O(n+m) average, O(nm) worst case
+	space O(1) since this version searches for one string at a time

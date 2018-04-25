@@ -1,0 +1,3 @@
+decompress:
+	time O(n) on input file size
+	space O(n) on input file size

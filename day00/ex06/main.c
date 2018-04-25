@@ -15,7 +15,7 @@ int main(void)
 	/*-------------------
 	launch your test here
 	--------------------*/
-
+	test(cBook);
 	return (0);
 }
 

@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   searchPrice.c                                      :+:      :+:    :+:   */
+/*   reverse.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkaser <lkaser@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/23 09:30:22 by lkaser            #+#    #+#             */
-/*   Updated: 2018/04/23 09:30:30 by lkaser           ###   ########.fr       */
+/*   Created: 2018/04/24 13:35:34 by lkaser            #+#    #+#             */
+/*   Updated: 2018/04/24 13:44:19 by lkaser           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include <string.h>
 #include "header.h"
 
-int	searchPrice(struct s_art **arts, char* name)
+void reversePut(struct s_node *lst)
 {
-	for (unsigned i = 0; arts[i]; ++i)
+	if (lst->next)
 	{
-		if (strcmp(name, arts[i]->name) == 0)
-			return arts[i]->price;
+		reversePut(lst->next);
+		write(1, " ", 1);
 	}
-	return -1;
+	write(1, lst->word, strlen(lst->word));
+}
+
+void printReverse(struct s_node *lst)
+{
+	reversePut(lst);
+	write(1, "\n", 1);
 }

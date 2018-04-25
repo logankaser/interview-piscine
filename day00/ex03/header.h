@@ -42,6 +42,8 @@ int searchPrice(struct s_dict *dict, char *name);
   ?? test function used in main 
   --------------------------------*/
 
+void	test(struct s_art** arts);
+
 struct s_art **getArts(void);
 
 

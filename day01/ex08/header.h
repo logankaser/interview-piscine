@@ -4,28 +4,22 @@
 /*--------------------------------
   !! required structure
   --------------------------------*/
-
-struct s_art {
-	char *name;
-	int price;
+struct s_node {
+	int value;
+	int isFinal;
+	struct s_node *random;
+	struct s_node *next;
 };
-
 
 /*--------------------------------
   :) function you must implement
   --------------------------------*/
-
-int searchPrice(struct s_art **arts, int n, char *name);
-
+int	minimumMoves(struct s_node *begin); //you must return the minimum number of strokes to access to the final
 
 /*--------------------------------
-  ?? test function used in main 
+  ?? test function used in main
   --------------------------------*/
-
-void	test(struct s_art** arts);
-
-struct s_art **getArts(int *n);
-
+struct s_node *getBoardFromFile(char *file);
 
 /*--------------------------------
   &  your own other function

@@ -1,0 +1,3 @@
+reverse:
+	time O(n) on the size of the input list
+	space O(n) stack space

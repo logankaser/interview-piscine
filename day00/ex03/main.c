@@ -14,9 +14,8 @@ int main(void)
 	/*-------------------
 	launch your test here
 	--------------------*/
-	//struct s_dict *dict;
-	//
-	//
+	
+	test(arts);
 
 	return (0);
 }

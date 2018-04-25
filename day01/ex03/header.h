@@ -4,27 +4,27 @@
 /*--------------------------------
   !! required structure
   --------------------------------*/
-
-struct s_art {
-	char *name;
-	int price;
+struct s_item {
+	int idx;
+	struct s_item *next;
 };
 
+struct s_stack {
+	struct s_item *item;
+};
 
 /*--------------------------------
   :) function you must implement
   --------------------------------*/
+struct s_stack *initStack();
+void push(struct s_stack *stack, int idx);
+int pop(struct s_stack *stack);
 
-int searchPrice(struct s_art **arts, int n, char *name);
-
+char *console(void);
 
 /*--------------------------------
-  ?? test function used in main 
+  ?? test function used in main
   --------------------------------*/
-
-void	test(struct s_art** arts);
-
-struct s_art **getArts(int *n);
 
 
 /*--------------------------------

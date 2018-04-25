@@ -1,0 +1,3 @@
+reverseV2:
+	time O(n)
+	space O(n)

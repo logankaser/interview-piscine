@@ -7,45 +7,33 @@
 
 int main(void)
 {
-	char *book;
-	char **words;
-	int lenWords;
+	struct s_city *city;
 
-	//getting the book and the list of words
-	book = readBookFile();
-	readWordsFile(&words, &lenWords);
-	
+	city = getCities();
+
 	/*-------------------
 	launch your test here
 	--------------------*/
-	struct s_dict *dict;
-	dict = dictInit(lenWords);
+	//printf("%s\n", NthLastCity(city, 2)); //should return 'Kobylin'
+	//printf("%s\n", NthLastCity(city, 10)); //should return 'Jastrzebie-Zdroj'
 
-	for (int i = 0; i < lenWords; ++i)
-		dictInsert(dict, words[i], i);
-	
-	test(book, dict);
 	return (0);
 }
+
 
 
 // Function used for the test
 // Don't go further :)
 
-#define FILENAME "book.txt"
+#define FILENAME "cities.txt"
 
-void	leave(void){
-	dprintf(STDERR_FILENO, "Failed to load the file.\n");
-	exit(0);
-}
-
-char    *readFile(char *filename)
+char    *readFile(void)
 {
     char *fcontent = NULL;
     int size = 0;
     FILE *fp;
 
-    if (NULL == (fp = fopen(filename, "r")))
+    if (NULL == (fp = fopen(FILENAME, "r")))
             return (NULL);
     fseek(fp, 0L, SEEK_END);
     size = ftell(fp);
@@ -57,14 +45,10 @@ char    *readFile(char *filename)
     return (fcontent);
 }
 
-//get book
-
-char	*readBookFile(void)
-{
-	return (readFile(FILENAME));
+void    getCities_leave(void){
+        dprintf(STDERR_FILENO, "failed to load the file.\n");
+        exit(0);
 }
-
-#define FILEWORDS "words.txt"
 
 char	**split(char *str, char *delimiter){
 	char **tab;
@@ -117,11 +101,31 @@ char	**split(char *str, char *delimiter){
 	return (tab);
 }
 
-void readWordsFile(char ***pWords, int *pLenWords)
+struct s_city *getCities(void)
 {
-	(*pWords) = split(readFile(FILEWORDS), "\n");
-	(*pLenWords) = 0;
-	//count the number of items in words and put it inside lenWords
-	for ((*pLenWords) = 0; (*pWords)[(*pLenWords)]; (*pLenWords)++)
-		;
+	char *str;
+	char **tab;
+	struct s_city *n;
+	struct s_city *tmp;
+	struct s_city *b;
+
+	dprintf(STDOUT_FILENO, "loading the file... ");
+	if (NULL == (str = readFile()))
+		getCities_leave();
+	b = NULL;
+	tab = split(str, "\n");
+	for (int i = 0; tab[i]; i++){
+		tmp = malloc(sizeof(struct s_city));
+		tmp->name = tab[i];
+		tmp->next = NULL;
+		if (!b){
+			b = tmp;
+			n = b;
+		}else{
+			n->next = tmp;
+			n = n->next;
+		}
+	}
+	dprintf(STDOUT_FILENO, "done!\n");
+	return (b);
 }

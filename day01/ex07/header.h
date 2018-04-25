@@ -4,28 +4,22 @@
 /*--------------------------------
   !! required structure
   --------------------------------*/
-
-struct s_art {
-	char *name;
-	int price;
+struct s_node {
+	int value;
+	struct s_node *random;
+	struct s_node *next;
 };
-
 
 /*--------------------------------
   :) function you must implement
   --------------------------------*/
-
-int searchPrice(struct s_art **arts, int n, char *name);
-
+struct s_node *cloneGameBoard(struct s_node *node);
 
 /*--------------------------------
   ?? test function used in main 
   --------------------------------*/
-
-void	test(struct s_art** arts);
-
-struct s_art **getArts(int *n);
-
+struct s_node *genRandomSnakesAndLadders(int n);
+void    printSnakeAndLadders(struct s_node *node);
 
 /*--------------------------------
   &  your own other function

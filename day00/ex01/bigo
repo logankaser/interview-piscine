@@ -1,0 +1,2 @@
+O(n log n) on the number elements to be sorted
+O(1) space (Mine is in-place heapsort)

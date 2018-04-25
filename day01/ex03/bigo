@@ -1,0 +1,10 @@
+console:
+	INPUT
+		time O(n) on input string size;
+		space O(n)
+	UNDO
+		time O(1)
+		space O(1)
+	SEND
+		time O(1)
+		space O(1)

@@ -1,0 +1,3 @@
+compress:
+	time O(n)
+	space O(n) on file size

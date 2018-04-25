@@ -41,11 +41,10 @@ char *decompress(char *cBook);
 char *readFile(void);
 char **mostUsedWords(char *book);
 char *compress(char *book, char **words);
-
+void test(char* comp);
 
 /*--------------------------------
   &  your own other function
   --------------------------------*/
-
 
 #endif

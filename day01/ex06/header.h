@@ -4,27 +4,20 @@
 /*--------------------------------
   !! required structure
   --------------------------------*/
-
-struct s_art {
+struct s_city {
 	char *name;
-	int price;
+	struct s_city *next;
 };
-
 
 /*--------------------------------
   :) function you must implement
   --------------------------------*/
-
-int searchPrice(struct s_art **arts, int n, char *name);
-
+char *NthLastCity(struct s_city *city, int n);
 
 /*--------------------------------
   ?? test function used in main 
   --------------------------------*/
-
-void	test(struct s_art** arts);
-
-struct s_art **getArts(int *n);
+struct s_city *getCities(void);
 
 
 /*--------------------------------

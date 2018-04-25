@@ -14,8 +14,7 @@ int main(void)
 	/*-------------------
 	launch your test here
 	--------------------*/
-	//printf("price for the art \'%s\' is %d\n", "Guernica", searchPrice(arts, "Guernica"));
-
+	test(arts);
 	return (0);
 }
 

@@ -4,22 +4,20 @@
 /*--------------------------------
   !! required structure
   --------------------------------*/
-
+struct s_node {
+	char          *word;
+	struct s_node *next;
+};
 
 /*--------------------------------
   :) function you must implement
   --------------------------------*/
-
-void rotate(int **picture, int n);
-
+void printReverse(struct s_node *lst);
 
 /*--------------------------------
   ?? test function used in main 
   --------------------------------*/
-
-int **import_pgm(char *file, char *magic, int *n, int *white);
-void print_pgm(int **pic, char *magic, int n, int white);
-
+struct s_node *createList(char **words, int n);
 
 /*--------------------------------
   &  your own other function

@@ -2,29 +2,25 @@
 # define HEADER_H
 
 /*--------------------------------
-  !! required structure
+  !! required
   --------------------------------*/
+# define CS "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 !?:;,.$&<>()+*-_="
 
-struct s_art {
-	char *name;
-	int price;
+struct s_node {
+	char c;
+	struct s_node *prev;
+	struct s_node *next;
 };
-
 
 /*--------------------------------
   :) function you must implement
   --------------------------------*/
-
-int searchPrice(struct s_art **arts, int n, char *name);
-
+char *precious(int *text, int size);
 
 /*--------------------------------
-  ?? test function used in main 
+  ?? test function used in main
   --------------------------------*/
-
-void	test(struct s_art** arts);
-
-struct s_art **getArts(int *n);
+void	test(int* text, int size);
 
 
 /*--------------------------------
