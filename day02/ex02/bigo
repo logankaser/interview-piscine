@@ -1,0 +1,3 @@
+quicksort:
+	time O(n^2), O(n log n) average
+	space O(n)

@@ -6,7 +6,7 @@
 /*   By: lkaser <lkaser@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/25 15:35:16 by lkaser            #+#    #+#             */
-/*   Updated: 2018/04/25 19:04:17 by lkaser           ###   ########.fr       */
+/*   Updated: 2018/04/26 13:56:03 by lkaser           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void sortStones(struct s_stone** stone)
 	}
 	bubbleSort(stoneArray, i);
 	struct s_stone* s = stoneArray[0];
+
 	int j = 0;
 	while (j < i)
 	{
@@ -58,6 +59,7 @@ void sortStones(struct s_stone** stone)
 			s->next = stoneArray[++j];
 		s = s->next;
 	}
+
 	while (s->next && s->size == s->next->size)
 		s = s->next;
 	s->next = 0;

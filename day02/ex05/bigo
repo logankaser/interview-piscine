@@ -1,0 +1,3 @@
+findshifted:
+	time O(n), O(log n) average
+	space (1)
