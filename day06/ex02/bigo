@@ -1,0 +1,2 @@
+time O(nlog(n)) on the number of games
+space O(n)

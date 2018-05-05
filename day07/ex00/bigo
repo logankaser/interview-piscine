@@ -1,0 +1,2 @@
+time: O(n log n)
+space: O(log n) but with tail call elimination it will be O(1)
