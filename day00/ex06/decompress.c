@@ -60,7 +60,7 @@ char* decompress(char* comp)
 {
 	// Create header map
 
-	char* header[256] = {0};
+	char* header[257] = {0};
 	++comp;
 	int index = 1;
 	while (*comp != '>')
@@ -75,7 +75,6 @@ char* decompress(char* comp)
 			++comp;
 	}
 	++comp;
-
 	// Decompress
 
 	struct s_string* s = stringInit();
@@ -94,8 +93,8 @@ char* decompress(char* comp)
 		if (*comp == '@' && *(comp + 1))
 		{
 			++comp;
-			if (*comp > 0 && header[(int)*comp])
-				stringAppend(s, header[(int)*comp]);
+			if ((unsigned char)*comp >= 1 && header[(unsigned char)*comp])
+				stringAppend(s, header[(unsigned char)*comp]);
 			++comp;
 		}
     }
