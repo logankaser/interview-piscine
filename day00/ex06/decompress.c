@@ -94,7 +94,7 @@ char* decompress(char* comp)
 		if (*comp == '@' && *(comp + 1))
 		{
 			++comp;
-			if (header[(int)*comp])
+			if (*comp > 0 && header[(int)*comp])
 				stringAppend(s, header[(int)*comp]);
 			++comp;
 		}
